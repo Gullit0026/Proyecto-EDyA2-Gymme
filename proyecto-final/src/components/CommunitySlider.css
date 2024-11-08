@@ -1,0 +1,43 @@
+/* General styles for the CommunitySlider component */
+.communitySlider .slider-item {
+    position: relative;
+  }
+  
+  .communitySlider .slider-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .communitySlider .slider-caption {
+    position: absolute;
+    bottom: 30px;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .communitySlider .slider-message {
+    margin-bottom: 8px;
+    font-style: italic;
+    font-size: 1.125rem; /* ~text-lg */
+    font-weight: 300; /* ~font-light */
+  }
+  
+  .communitySlider .slider-author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+  }
+  
+  .communitySlider .tilde {
+    font-size: 30px;
+    font-weight: bold;
+  }
+  
+  .communitySlider .author-name {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
