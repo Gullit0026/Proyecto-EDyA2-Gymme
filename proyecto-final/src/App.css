@@ -1,12 +1,7 @@
 .app{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    margin-left: auto;       
-    margin-right: auto; 
     overflow: hidden;
 }
 
 body{
-    font-family: arial, sans-serif;
+    font-family: italic, sans-serif;
   }

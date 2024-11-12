@@ -1,0 +1,24 @@
+.pie-de-pagina {
+  background-color: #0c0c0c;
+  height: 12vh;
+}
+
+.contenedor-pie {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;
+}
+
+.logo-pie img {
+  width: 160%;
+  margin-left: 100%;
+}
+
+.copyright-pie {
+  color: #e0e0e0;
+  font-size: small;
+  margin-right: 15%
+}

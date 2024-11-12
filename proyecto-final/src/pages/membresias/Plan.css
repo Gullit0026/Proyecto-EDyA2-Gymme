@@ -1,0 +1,130 @@
+.contenedor-lista-planes {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 1280px;
+    margin: 0 auto;
+    gap: 1rem;
+}
+  
+.tarjeta-plan {
+    width: 100%;
+    max-width: 620px;
+    padding: 1.2%;
+    border-radius: 4px;
+}
+.contenido-plan {
+    display: flex;
+    justify-content: center;
+    padding: 2%;
+    min-height: 550px;
+    transition: all 0.1s ease;
+    background-color: rgba(175, 156, 143, 0.1);
+    color: #6b7280; 
+}
+  
+.contenido-plan.activo {
+    background-color: #080808; 
+    color: #ffffff;
+    transform: scale(1.1);
+}
+  
+.info-plan {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 5.5rem;
+    height: 22rem;
+}
+  
+.nombre-plan {
+    font-weight: 600;
+    padding: 5px 20px;  
+    background-color: #6b7280; 
+    color: #ffffff;
+}
+  
+.nombre-plan.seleccionado {
+    background-color: #ffffff;
+    color: #6b7280; 
+}
+  
+.precio-plan {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+  
+.moneda {
+    font-size: large;
+    font-weight: 500;
+    color: #6b7280;
+}
+
+.moneda.seleccionado {
+    color: #ffffff;
+}
+  
+.duracion-precio {
+    font-size: large;
+}
+
+.caracteristicas-plan-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 8rem;
+    height: 20rem;
+}
+
+.caracteristicas-plan {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 10px;
+}
+
+.caracteristicas-plan.seleccionado {
+    color: #ffffff;
+}
+  
+.item-caracteristica {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.item-caracteristica-icon{
+  color: #d6d6d6;
+  font-size: large;
+}
+
+.btn-plan-container {
+  display: flex;
+  justify-content: right;
+  width: 80%;
+}
+
+.btn-plan {
+  padding: 10px 20px;
+  background-color: #dddddd;
+  color: #6b7280;
+  border: none;
+  border-radius: 4px;
+  font-size: medium;
+  font-weight: 700;
+}
+
+.btn-plan.seleccionado {
+  cursor: pointer;
+}
+
+.btn-plan.seleccionado:hover {
+  background-color: #ffffff;
+  color: #000000;
+}

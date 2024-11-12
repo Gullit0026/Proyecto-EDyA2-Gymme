@@ -1,0 +1,53 @@
+.tarjeta-acordeon {
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px; 
+  cursor: pointer;
+}
+
+.tarjeta-acordeon:hover {
+  background-color: #f5f5f5;
+}
+
+.tarjeta-acordeon.estaAbierto {
+  background-color: #f5f5f5;
+}
+
+.encabezado-acordeon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  min-height: 60px;
+}
+
+.pregunta-acordeon {
+  font-size: large;
+  font-weight: bold;
+}
+
+.icono-acordeon {
+  font-size: large;
+  color: #6b6b6b; 
+}
+
+.icono-abierto{
+  color: #ff5622;
+}
+
+.respuesta-acordeon {
+  background-color: #f5f5f5;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.respuesta-acordeon.abierto {
+  min-height: 100px; 
+}
+
+.tarjeta-acordeon:hover .icono-acordeon {
+  color: #ff56229c;
+}

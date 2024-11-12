@@ -1,0 +1,116 @@
+.login-container {
+  position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.24);
+    z-index: 100;
+  }
+
+  .login-form {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 25%;
+    min-width: 400px;
+  }
+  
+  .login-container h2{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .input-group {
+    margin-bottom: 15px;
+  }
+  
+  .input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: medium;
+  }
+  
+  .redireccion-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    gap: 0.5rem;
+  }
+
+  .btn-login-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 30px;
+  }
+
+  .btn-cancelar-login {
+    background-color: rgb(173, 173, 173);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+  }
+
+  .btn-cancelar-login:hover {
+    background-color: rgb(153, 153, 153);
+  }
+
+  .btn-cancelar-login a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+  }
+
+  .login-button {
+    width: 30%;
+    padding: 10px;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .login-button:hover {
+    background-color: #e64a19;
+  }
+
+  hr {
+    margin: 15px 0;
+  }
+  .contenedor-btn-registrarse{
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+  }
+
+  .contenedor-btn-registrarse button{
+    background-color: #4CAF50;
+    color: white;
+    font-size: medium;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    width: 50%;
+  }
+
+  .contenedor-btn-registrarse button:hover{
+    background-color: #45a049;
+  }
+  
