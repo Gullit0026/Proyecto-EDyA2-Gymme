@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "@react-email/components": "0.0.28",
     "aos": "^2.3.4",
     "axios": "^1.7.7",
     "leaflet": "^1.9.4",
@@ -17,6 +19,8 @@
     "react-dom": "^18.3.1",
     "react-icons": "^5.3.0",
     "react-leaflet": "^4.2.1",
+    "react-router-dom": "^6.28.0",
+    "resend": "^4.0.1-alpha.0",
     "swiper": "^11.1.14"
   },
   "devDependencies": {
