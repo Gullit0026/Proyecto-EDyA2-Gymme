@@ -15,6 +15,19 @@ const Register = ({handleInicioSesion}) => {
   const admin = false;
 
   const handleErrores = async() => {
+
+    const usuarioPorCorreo = await getUsuarioBycorreo(correo);
+    if (usuarioPorCorreo && usuarioPorCorreo.nombre) { 
+      alert('El correo electrónico ya está registrado.');
+      return 0;
+    }
+  
+    const usuarioPorId = await getUsuarioById(_id);
+    if (usuarioPorId && usuarioPorId.nombre) {  
+      alert('La cédula ya está registrada.');
+      return 0;
+    }
+
     if (clave !== confirmaClave) {
       alert('La clave de confirmación no coincide.');
       return 0;
@@ -42,20 +55,6 @@ const Register = ({handleInicioSesion}) => {
 
     if (clave.length < 12) {
       alert('La clave debe tener al menos 12 caracteres.');
-      return 0;
-    }
-
-    const usuarioPorCorreo = await getUsuarioBycorreo(correo);
-    if (usuarioPorCorreo && usuarioPorCorreo.nombre) { 
-      console.log("Correo ya registrado:", usuarioPorCorreo);
-      alert('El correo electrónico ya está registrado.');
-      return 0;
-    }
-  
-    const usuarioPorId = await getUsuarioById(_id);
-    if (usuarioPorId && usuarioPorId.nombre) {  
-      console.log("Cédula ya registrada:", usuarioPorId);
-      alert('La cédula ya está registrada.');
       return 0;
     }
 
