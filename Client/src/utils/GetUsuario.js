@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export async function getUsuarioById(id) {
     try {
-        const response = await axios.get(`http://localhost:8080/api/users/getUserById/${id}`);   
+        const response = await axios.get(`http://localhost:5100/usuarios/getById/${id}`);   
         return response.data;
     } catch (error) {
         console.error('Error en la conexión a la API:', error.message);
@@ -12,7 +12,7 @@ export async function getUsuarioById(id) {
 
 export async function getUsuarioBycorreo(correo) {
     try {
-        const response = await axios.get(`http://localhost:8080/api/users/getUserByEmail/${correo}`);
+        const response = await axios.get(`http://localhost:5100/usuarios/getByCorreo/${correo}`);
         return response.data; 
     } catch (error) {
         console.error('Error en la conexión a la API:', error.message);

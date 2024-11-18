@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { getUsuarioById, getUsuarioBycorreo } from "../../../utils/GetUsuario";
+import loginUsuario from "../../../utils/LoginUsuario";
+import {getUsuarioBycorreo} from "../../../utils/GetUsuario";
 import './InicioSesion.css';
 
 const Login = ({handleRegistro, handleCancelar, handleRecuperarPassword, handleLogged}) => {
@@ -9,17 +10,21 @@ const Login = ({handleRegistro, handleCancelar, handleRecuperarPassword, handleL
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const usuario = { correo, password: clave };
     const usuarioEncontrado = await getUsuarioBycorreo(correo);
 
-    if (usuarioEncontrado && usuarioEncontrado.clave === clave && usuarioEncontrado.correo === correo) {
+    if (!usuarioEncontrado) {
+      alert('El correo eléctronico no se encuentra registrado.');
+      return;
+    }
+
+    try {
+      await loginUsuario(usuario);
+      alert('Inicio de sesión exitoso.');
       handleLogged();
-      alert('Inicio de sesión exitoso');
-    }
-    else if (usuarioEncontrado && usuarioEncontrado.clave !== clave) {
-      alert('La clave es incorrecta');
-    }
-    else{
-      alert('No se encontró una cuenta asociada a este correo.');
+    } catch (error) {
+      console.error('Error al iniciar sesión:', error);
+      alert('La contraseña es incorrecta.');
     }
   };
 

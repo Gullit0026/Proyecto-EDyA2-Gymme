@@ -13,6 +13,7 @@ const Register = ({ handleInicioSesion, handleCancelar }) => {
   const [confirmaClave, setConfirmarClave] = useState('');
 
   const admin = false;
+  const plan = "ninguno";
 
   const handleErrores = async () => {
     const usuarioPorCorreo = await getUsuarioBycorreo(correo);
@@ -64,20 +65,12 @@ const Register = ({ handleInicioSesion, handleCancelar }) => {
     e.preventDefault();
 
     const error = await handleErrores();
+    const usuario = { _id, nombre, apellido, correo, admin, plan, password: clave };
 
-    if (error) {
-      const usuario = { _id, nombre, apellido, correo, clave, admin };
-
-      try {
-        await registroUsuario(usuario);
-        alert('Usuario registrado exitosamente.');
-        sendVerificationEmail(correo);
-        handleInicioSesion();
-      } catch (error) {
-        console.error('Error al registrar el usuario:', error);
-        alert('Error al registrar el usuario.');
-      }
-    }
+    await registroUsuario(usuario);
+    alert('Usuario registrado exitosamente.');
+    sendVerificationEmail(correo);
+    handleInicioSesion();
   };
 
   const handleCedulaChange = (e) => {
