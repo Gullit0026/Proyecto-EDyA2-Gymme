@@ -52,8 +52,8 @@ const Register = ({ handleInicioSesion, handleCancelar }) => {
       return false;
     }
 
-    if (clave.length < 12) {
-      alert('La clave debe tener al menos 12 caracteres.');
+    if (clave.length < 8) {
+      alert('La clave debe tener al menos 8 caracteres.');
       return false;
     }
 
