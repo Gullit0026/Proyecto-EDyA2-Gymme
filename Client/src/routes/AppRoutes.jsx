@@ -18,6 +18,7 @@ import Header from "../Components/Shared/header/Header";
 import InicioSesion from "../Components/Index/inicioSesion/InicioSesion";
 import Registro from "../Components/Index/registro/Registro";
 import RecuperarPassword from "../Components/Index/recuperarPassword/RecuperarPassword";
+import Chat from "../Components/Index/chat/Chat";
 
 const AppRoutes = () => {
   const [registro, setRegistro] = useState(false);
@@ -81,6 +82,7 @@ const AppRoutes = () => {
       <div id="planes"><Membresias handleRegistro={handleRegistro} logged={logged}/></div>
       <div id="preguntas"><Preguntas /></div>
       <div id="ubicacion"><Ubicacion /></div>
+      <Chat/>
 
       <Unete handleRegistro={handleRegistro} logged={logged}/>
       <Footer />
