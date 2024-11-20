@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import Accordion from "./Accordion";
 import QuestionMarkIcn from '../../assets/img/faq/icons/question-mark.svg';
+import io from "socket.io-client";
+import { getChats, send, getAll} from "../../utils/Chat";
 import "./Preguntas.css";
 
-const PreguntasFrecuentes = () => {
+const socket = io("http://localhost:5100");
+console.log("Cliente conectado al servidor");
+
+const PreguntasFrecuentes = ({ setShowChat, logged, handleInicioSesion, correo, setMessagesList, messagesList, admin, allChats, setAllChats}) => {
 
   const faq = {
     acordiones: [
@@ -42,6 +47,37 @@ const PreguntasFrecuentes = () => {
 
   const { acordiones } = faq;
 
+  const getAllChats = async () => {
+    if (admin) {
+      setAllChats(await getAll());
+    }
+  };
+
+  const joinRoom = async () => {  
+    if (admin) {
+      getAllChats();
+    } else {
+      const chat = await getChats(correo);
+      if (!chat) {
+        const newChat = await send(correo, [{ texto: "Bienvenido!", autor: "Sistema", time: new Date().toLocaleTimeString() }]);
+        setMessagesList(newChat.mensajes); 
+      } else {
+        setMessagesList(chat.mensajes);
+      }
+    }
+
+    socket.emit("join_room", correo);
+  };
+
+  const handleChat = () => {
+    if (!logged) {
+      handleInicioSesion();
+    } else {
+      joinRoom();
+      setShowChat(true);
+    }
+  };
+
   return (
     <>
       <div className="contenedor-preguntas" data-aos="fade-up" data-aos-offset="300" data-aos-delay="200">
@@ -55,6 +91,12 @@ const PreguntasFrecuentes = () => {
             <Accordion acordeon={acordeon} key={indice} />
           ))}
         </div>
+
+        <div className="preguntas-btn-container" data-aos="fade-up" data-aos-offset="300" data-aos-delay="200">
+          <h4 className="preguntas-texto">Si tienes alguna otra pregunta contactanos</h4>
+          <button onClick={() => handleChat()} className="preguntas-btn">Aquí</button>
+        </div>
+
       </div>
     </>
   );

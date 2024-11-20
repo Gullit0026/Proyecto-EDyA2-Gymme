@@ -3,7 +3,7 @@ import loginUsuario from "../../../utils/LoginUsuario";
 import {getUsuarioBycorreo} from "../../../utils/GetUsuario";
 import './InicioSesion.css';
 
-const Login = ({handleRegistro, handleCancelar, handleRecuperarPassword, handleLogged}) => {
+const Login = ({handleRegistro, handleCancelar, handleRecuperarPassword, handleLogged, handleSetCorreo, admin, setAdmin}) => {
   const [correo, setEmail] = useState('');
   const [clave, setPassword] = useState('');
 
@@ -22,6 +22,9 @@ const Login = ({handleRegistro, handleCancelar, handleRecuperarPassword, handleL
       await loginUsuario(usuario);
       alert('Inicio de sesión exitoso.');
       handleLogged();
+      handleSetCorreo(correo);
+      const usuarioAdmin = usuarioEncontrado.admin;
+      setAdmin(usuarioAdmin);
     } catch (error) {
       console.error('Error al iniciar sesión:', error);
       alert('La contraseña es incorrecta.');
