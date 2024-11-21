@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaChevronCircleUp, FaChevronCircleDown } from "react-icons/fa";
-import "./accordion.css";
+import "./Accordion.css";
 
 const Acordeon = ({ acordeon }) => {
   const [estaAbierto, setEstaAbierto] = useState(false);
