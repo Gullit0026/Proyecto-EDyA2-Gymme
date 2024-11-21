@@ -43,12 +43,8 @@ app.use('/usuarios', routesUsuarios);
 
 app.use('/chats', routesChats);
 
-try {
-  const PORT = 5100;
-  server.listen(PORT, () => console.log(`Servidor escuchando en el puerto ${PORT}`));
-} catch (e) {
-  console.log(e);
-}
+const PORT = process.env.PORT || 5100;
+server.listen(PORT, () => console.log(`Servidor escuchando en el puerto ${PORT}`));
 
 process.on('SIGINT', async () => {
   try {
